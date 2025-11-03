@@ -1,0 +1,12 @@
+.list-card {
+    display: flex;
+    flex-flow: column wrap;
+    padding: 5px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+    max-width: 95dvw;
+    background-color: var(--bg-light);
+    color: var(--text-muted);
+    z-index: 10;
+}

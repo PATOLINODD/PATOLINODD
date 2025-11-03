@@ -1,0 +1,7 @@
+.faded-blue { 
+    color: var(--text-faded-blue);
+}
+
+.title {
+    color: var(--text);
+}

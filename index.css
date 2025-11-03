@@ -1,0 +1,101 @@
+:root {
+  --bg-dark: hsl(0, 0%, 5%);
+  --bg-mid: hsl(0, 0%, 10%);
+  --bg-light: hsl(0, 0%, 15%);
+  --border: hsl(0, 0%, 45%);
+  --text: hsl(0, 0%, 95%);
+  --text-muted: hsl(0, 0%, 75%);
+  --text-faded: hsl(0, 0%, 35%);
+  --text-small: 14px;
+  --text-faded-blue: hsl(210, 50%, 35%);
+  --text-blue: hsl(210, 100%, 75%);
+}
+
+body.light {
+  --bg-dark: hsl(0, 0%, 95%);
+  --bg-mid: hsl(0, 0%, 90%);
+  --bg-light: hsl(0, 0%, 85%);
+  --border: hsl(0, 0%, 55%);
+  --text: hsl(0, 0%, 10%);
+  --text-muted: hsl(0, 0%, 35%);
+  --text-faded: hsl(0, 0%, 55%);
+  --primary: hsl(65, 70%, 40%);
+  --primary-disabled: hsl(65, 70%, 70%);
+}
+
+html, body {
+  background-color: var(--bg-dark);
+  color: var(--text-muted);
+  font-family: var(--font-sans, system-ui, sans-serif);
+}
+
+p, a, span {
+  color: var(--text-muted);
+  text-align: justify;
+}
+
+h1, h2, h3, h4 {
+  color: var(--text);
+}
+
+h1 > a, h2 > a {
+  color: var(--text) !important;
+}
+
+h3 > a {
+  color: var(--text-muted) !important;
+}
+
+h4 > a {
+  color: var(--text-faded) !important;
+}
+
+time, .faded {
+  color: var(--text-faded);
+}
+section {
+  background-color: var(--bg-mid);
+  padding: 2rem 1.5rem;
+  z-index: 10;
+  position: relative;
+}
+
+button {
+  &:hover {
+    cursor: pointer;
+    color: var(--text-blue);
+  }
+}
+.text-small {
+  font-size: var(--text-small);
+}
+
+.linkedin {
+  background-color: hsl(210, 50%, 50%);
+  border: 5px solid hsl(210, 50%, 50%);
+  border-radius: 2px;
+}
+
+img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  float: left;
+}
+
+
+/* Custom Theme Variables */
+/* @theme {
+  --background: var(--bg-dark);
+  --color-dark: var(--bg-dark);
+  --color-mid: var(--bg-mid);
+  --color-light: var(--bg-light);
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
+
+  --font-sans: ui-sans-serif, system-ui, sans-serif, 
+               "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 
+               "Liberation Mono", "Courier New", monospace;
+} */

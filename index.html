@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta name="linkedin:pageTag" content="openToProvider" />
+    <meta name="locale" content="pt_BR" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- =======================================================================================  -->
+    <!--                                  LIBS GSAP                                               -->
+    <!-- =======================================================================================  -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/MotionPathHelper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/MotionPathPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <!-- ScrollSmoother requires ScrollTrigger -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollToPlugin.min.js"></script>
+    <!-- =======================================================================================  -->
+    <!--                                  TAILWIND                                                -->
+    <!-- =======================================================================================  -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <script>
+      function getDfd() {
+        let yFn, nFn;
+        const p = new Promise(function (y, n) {
+          yFn = y;
+          nFn = n;
+        });
+        p.resolve = yFn;
+        p.reject = nFn;
+        return p;
+      }
+      window.lazyloader = getDfd();
+      window.tracking = getDfd();
+      window.impressionTracking = getDfd();
+      window.ingraphTracking = getDfd();
+      window.appDetection = getDfd();
+      window.pemTracking = getDfd();
+    </script>
+    <title>Patrick Oliveira</title>
+    <meta charset="UTF-8" />
+    <!-- <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "reviewedBy": { "@type": "Person", "name": "Patrick Oliveira" },
+            "url": "https://br.linkedin.com/in/patrickoliveira97"
+          },
+          {
+            "@context": "http://schema.org",
+            "@type": "Person",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "BR",
+              "addressLocality": "São Paulo, São Paulo, Brasil"
+            },
+            "alumniOf": [
+              {
+                "@type": "Organization",
+                "name": "Peopleware Tecnologia",
+                "url": "https://br.linkedin.com/company/peoplewaretecnologia",
+                "location": "São Paulo, São Paulo, Brasil",
+                "member": {
+                  "@type": "OrganizationRole",
+                  "description": "Na Peopleware Tecnologia, contribui para o desenvolvimento e modernização de aplicações empresariais, trabalhando de perto com as equipes para melhorar a eficiência do sistema e a experiência do usuário. Algumas das minhas principais contribuições incluíram:\u003Cbr\u003E\u003Cbr\u003E🚀 Modernização & Migração de Sistemas\u003Cbr\u003ELiderei a migração de sistemas legados em Adobe Flex para Angular (1 e 8), melhorando o desempenho e a manutenção.\u003Cbr\u003EMigrei projetos de Java Struts para Angular e Java EE, modernizando a pilha de aplicações.\u003Cbr\u003E\u003Cbr\u003E💡 Desenvolvimento Backend & APIs\u003Cbr\u003EDesenvolvi e mantive soluções backend em Java EE, integrando APIs RESTful e servlets para garantir uma funcionalidade contínua.\u003Cbr\u003E\u003Cbr\u003E🤝 Colaboração em Equipe & Mentoria\u003Cbr\u003EPrestei suporte para as equipes internas, resolvendo problemas e mentorando desenvolvedores juniores nas melhores práticas de codificação.\u003Cbr\u003E\u003Cbr\u003EMinha função exigia uma combinação de resolução de problemas, programação e pensamento estratégico, garantindo que tanto a equipe de desenvolvimento quanto nossos clientes se beneficiassem de soluções confiáveis e escaláveis.",
+                  "startDate": "2021-12",
+                  "endDate": "2025-01"
+                }
+              },
+              {
+                "@type": "EducationalOrganization",
+                "name": "Resilia Educação",
+                "url": "https://br.linkedin.com/school/resilia-educacao/",
+                "member": {
+                  "@type": "OrganizationRole",
+                  "description": "Uma jornada incrivel de 6 meses de imersão ao desenvolvimento fullstack.\u003Cbr\u003ELinguagens aprendidas: HTML, CSS, JAVASCRIPT, NODEJS, MYSQL, REACTJS.\u003Cbr\u003EAprendi a fazer desde uma pagina estatica e apenas de visualização a uma pagina mais dinamica e interativa.\u003Cbr\u003EAprendi a usar pacotes do nodejs, a criar uma API restfull com conexão ao banco de dados usando as regras do CRUD.\u003Cbr\u003EUsei o REACTJS para mostrar ao usuario os dados partindo da API criada.\u003Cbr\u003E\u003Cbr\u003EAprendi também desenvolver habilidades de soft skills. Conheci sobre, como ter uma rotina de sucesso, os 4 pilares da inteligência emocional, metodologias ageis scrum e kamban, reuniões ageis. Além de dar atividades para solucionar os problemas de um trabalho em grupo, fomos estimulados a desenvolver essas habilidades com colegas de classe e enquanto desenvolviamos atividades em grupos.\u003Cbr\u003E\u003Cbr\u003EAlgo que quero ressaltar é que, soft skills foi muito importante pra mim e pratico até hoje.",
+                  "startDate": "2021-03",
+                  "endDate": "2021-09"
+                }
+              },
+              {
+                "@type": "EducationalOrganization",
+                "name": "Escola Estadual Professor Antônio Lisboa",
+                "member": {
+                  "@type": "OrganizationRole",
+                  "startDate": "2016-07",
+                  "endDate": "2017-12"
+                }
+              }
+            ],
+            "awards": [],
+            "disambiguatingDescription": "",
+            "image": {
+              "@type": "ImageObject",
+              "contentUrl": "https://media.licdn.com/dms/image/v2/D4D03AQEVoQyqlXdWYg/profile-displayphoto-shrink_200_200/B4DZdiN0x1HkAY-/0/1749699481108?e=2147483647&v=beta&t=2b5cui329sUjSiJQk3FK0wE8KX-uvFQak1_sueNBXaI"
+            },
+            "jobTitle": [],
+            "knowsLanguage": [{ "@type": "Language", "name": "English" }],
+            "memberOf": [],
+            "name": "Patrick Oliveira",
+            "sameAs": "https://br.linkedin.com/in/patrickoliveira97",
+            "url": "https://br.linkedin.com/in/patrickoliveira97",
+            "worksFor": [],
+            "interactionStatistic": {
+              "@type": "InteractionCounter",
+              "interactionType": "https://schema.org/FollowAction",
+              "name": "Follows",
+              "userInteractionCount": 131
+            },
+            "description": "SOBRE MIM:\u003Cbr\u003E\u003Cbr\u003ESou um desenvolvedor de software apaixonado e dedicado desde 2020, especializado em desenvolvimento web, automação e desenvolvimento de jogos em Java. Com uma sólida base em Java, TypeScript e Angular, desenvolvi aplicações escaláveis, interfaces de usuário dinâmicas e sistemas backend eficientes. Minha experiência também inclui gerenciamento de bancos de dados, desenvolvimento de APIs e otimização de desempenho para experiências de usuário.\u003Cbr\u003E\u003Cbr\u003EAlém das habilidades técnicas, estou comprometido com o aprendizado contínuo e o crescimento profissional. Atualmente, estou aprimorando minha proficiência em inglês para participar de projetos internacionais e colaborar com equipes globais.\u003Cbr\u003E\u003Cbr\u003E \u003Cbr\u003E\u003Cbr\u003EOBJETIVOS:\u003Cbr\u003E\u003Cbr\u003EMeu objetivo é trabalhar em uma empresa onde eu possa aplicar minhas habilidades para resolver problemas complexos, contribuir para projetos significativos e continuar evoluindo como desenvolvedor.\u003Cbr\u003E\u003Cbr\u003ETenho um grande interesse por oportunidades que estejam alinhadas com minha paixão por inovação, automação e criação de soluções digitais impactantes. \u003Cbr\u003E\u003Cbr\u003ESe você está buscando um desenvolvedor dedicado, que prospera na resolução de problemas e em ambientes colaborativos, adoraria me conectar e explorar potenciais oportunidades."
+          }
+        ]
+      }
+    </script> -->
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="./styles/card.css" />
+    <link rel="stylesheet" href="./styles/header.css" />
+    <link rel="stylesheet" href="./styles/image.css" />
+    <link rel="stylesheet" href="./styles/text.css" />
+    <link rel="stylesheet" href="./styles/university.css" />
+    <link rel="stylesheet" href="./styles/courses.css" />
+  </head>
+  <body class="">
+    <div id="smooth-content">
+      <header class="relative">
+        <nav class="flex justify-between items-center relative">
+          <div>PATRICK</div>
+          <ul class="flex justify-between items-center gap-4">
+            <li class="section">PROJETOS</li>
+            <li class="section">CONQUISTAS</li>
+            <li class="section">RECOMEDAÇÕES</li>
+            <li class="section">CONTATO</li>
+            <li class="section">CURRICULO</li>
+          </ul>
+        </nav>
+      </header>
+      <!-- ============================================================================================== -->
+      <!--                          FORMAÇÃO ACADEMICA                                                    -->
+      <!-- ============================================================================================== -->
+      <section id="FORMAÇÕES" class="university relative">
+        <!-- backgroud -->
+        <img src="./assets/images/formatura.png" alt="formatura" class="back" />
+        <h2 class="text-xl mb-2 relative font-bold" style="color: white">
+          Formação acadêmica
+        </h2>
+        <div class="break-words">
+          <ul
+            class="flex flex-row flex-wrap md:grid grid-cols-2 grid-rows-3 gap-9"
+          >
+            <li class="list-card row-span-3 w-[90dvw] md:w-full">
+              <div class="flex gap-2">
+                <img
+                  class="box-content rounded-[6px]"
+                  data-delayed-url="https://media.licdn.com/dms/image/v2/C4D0BAQEr9DAewtvRSQ/company-logo_100_100/company-logo_100_100/0/1633706590981/resilia_educacao_logo?e=2147483647&amp;v=beta&amp;t=or_DJkUQg6Uwt8kjuFObixt2_OwHrPYFB7_NfGwEeK8"
+                  data-ghost-url="https://static.licdn.com/aero-v1/sc/h/6qpnald1ddva78jx4bnnl3vw"
+                  alt="Gráfico Resilia Educação"
+                />
+                <div>
+                  <h3
+                    class="text-[18px] leading-regular group-hover:underline font-semibold"
+                  >
+                    <a
+                      class="text-[18px] link-styled link-no-visited-state hover:! active:!"
+                      data-tracking-control-name="public_profile_school"
+                      data-tracking-will-navigate
+                      href="https://br.linkedin.com/school/resilia-educacao/?trk=public_profile_school"
+                    >
+                      <span class="title"> Resilia Educação </span>
+                    </a>
+                  </h3>
+                  <h4 class="text-md">
+                    <span data-section="educations">
+                      Desenvolvimento web fullstack
+                    </span>
+                  </h4>
+                  <span class="faded text-small text-justify">
+                    2021 - 2021
+                  </span>
+                </div>
+              </div>
+              <p class="text-justify p-1">
+                Uma jornada incrivel de 6 meses de imersão ao desenvolvimento
+                fullstack.
+                <br />
+                Linguagens aprendidas: HTML, CSS, JAVASCRIPT, NODEJS, MYSQL,
+                REACTJS.
+                <br />
+                Aprendi a fazer desde uma pagina estatica e apenas de
+                visualização a uma pagina mais dinamica e interativa.
+                <br />
+                Aprendi a usar pacotes do nodejs, a criar uma API restfull com
+                conexão ao banco de dados usando as regras do CRUD.
+                <br />
+                Usei o REACTJS para mostrar ao usuario os dados partindo da API
+                criada.
+                <br /><br />
+                Aprendi também desenvolver habilidades de soft skills. Conheci
+                sobre, como ter uma rotina de sucesso, os 4 pilares da
+                inteligência emocional, metodologias ageis scrum e kamban,
+                reuniões ageis. Além de dar atividades para solucionar os
+                problemas de um trabalho em grupo, fomos estimulados a
+                desenvolver essas habilidades com colegas de classe e enquanto
+                desenvolviamos atividades em grupos.
+                <br /><br />
+                Algo que quero ressaltar é que, soft skills foi muito importante
+                pra mim e pratico até hoje.
+              </p>
+            </li>
+            <li class="list-card row-span-1 w-[90dvw] md:w-full">
+              <div class="flex gap-2">
+                <img
+                  class="box-content rounded-[6px]"
+                  data-delayed-url="https://static.licdn.com/aero-v1/sc/h/6qpnald1ddva78jx4bnnl3vw"
+                  data-ghost-classes="bg-color-entity-ghost-background"
+                  data-ghost-url="https://static.licdn.com/aero-v1/sc/h/6qpnald1ddva78jx4bnnl3vw"
+                  alt
+                />
+                <div class="pl-0.5 grow break-words">
+                  <h3
+                    class="text-[18px] leading-regular group-hover:underline font-semibold"
+                  >
+                    <span class="title">
+                      Escola Estadual Professor Antônio Lisboa
+                    </span>
+                  </h3>
+                  <h4 class="text-md">
+                    <span>Ensino Médio</span>
+                  </h4>
+                  <span class="faded text-small"> 2016 - 2017 </span>
+                </div>
+              </div>
+            </li>
+            <li class="list-card col-start-2 row-start-3 w-[90dvw] md:w-full">
+              <div class="flex gap-2">
+                <img
+                  class="box-content rounded-[6px]"
+                  data-delayed-url="https://media.licdn.com/dms/image/v2/D4D0BAQHdM_cwX2oKiA/company-logo_100_100/company-logo_100_100/0/1721676084455?e=2147483647&amp;v=beta&amp;t=Q5Igs-iMIev_bigFf7MO-bug1JU02ZWkVs20SN5qekQ"
+                  data-ghost-classes="bg-color-entity-ghost-background"
+                  data-ghost-url="https://static.licdn.com/aero-v1/sc/h/6qpnald1ddva78jx4bnnl3vw"
+                  alt="Gráfico Centro Universitário FMU | FIAM-FAAM"
+                />
+                <div>
+                  <h3
+                    class="text-[18px] leading-regular group-hover:underline font-semibold"
+                  >
+                    <a
+                      class="text-[18px] link-styled link-no-visited-state hover:! active:!"
+                      data-tracking-control-name="public_profile_school"
+                      data-tracking-will-navigate
+                      href="https://br.linkedin.com/school/centro-universitario-fmu/?trk=public_profile_school"
+                    >
+                      <span class="title">
+                        Centro Universitário FMU | FIAM-FAAM
+                      </span>
+                    </a>
+                  </h3>
+
+                  <h4 class="text-md">
+                    <span class="">Ciência da Computação</span>
+                  </h4>
+                  <span
+                    class="faded date-range font-sans text-md leading-open font-regular"
+                  >
+                    2024 - o momento
+                  </span>
+                </div>
+              </div>
+
+              <p class="text-justify p-1">
+                Programando sistemas e teoria da computação. Ganhando
+                experiência prática através de tarefas, testes e projetos que
+                trazem conhecimento e resoluções de problemas.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ============================================================================================== -->
+      <!--                          LICENÇAS E CERTIFICADOS                                               -->
+      <!-- ============================================================================================== -->
+      <section id="CERTIFICADOS" class="p-2 relative overflow-hidden">
+        <!-- background -->
+        <img src="./assets/images/programming_image.png" alt="" class="back" />
+        <h2 class="text-xl mb-2 relative">Licenças e certificados</h2>
+        <div class="z-10">
+          <ul class="flex flex-wrap gap-9 md:grid grid-cols-2 grid-rows-3">
+            <li class="list-card relative java w-[90dvw] md:w-full">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                class="absolute top-2 right-2"
+              >
+                <!-- Icon from Ultimate free icons by Streamline - https://creativecommons.org/licenses/by/4.0/ -->
+                <g
+                  fill="#ff2938"
+                  stroke="#902"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                >
+                  <path
+                    d="M11.25 6.749H12a.75.75 0 0 1 .75.75v5.25m-1.5 0h3m-9.533.401L.75 18l3.75.75l1.5 4.5l3.99-6.332m9.293-3.768L23.25 18l-3.75.75l-1.5 4.5l-3.99-6.332"
+                  />
+                  <path
+                    d="M12.471.915L14.318 2.4l2.369-.118a.75.75 0 0 1 .761.553l.62 2.289l1.986 1.3a.75.75 0 0 1 .29.895L19.5 9.536l.844 2.216a.75.75 0 0 1-.29.895l-1.986 1.3l-.62 2.29a.75.75 0 0 1-.761.553l-2.369-.118l-1.847 1.488a.75.75 0 0 1-.942 0l-1.847-1.491l-2.369.118a.75.75 0 0 1-.761-.553l-.62-2.29l-1.986-1.3a.75.75 0 0 1-.29-.895L4.5 9.536l-.844-2.217a.75.75 0 0 1 .29-.895l1.986-1.3l.62-2.29a.75.75 0 0 1 .761-.552l2.369.118L11.529.915a.75.75 0 0 1 .942 0"
+                  />
+                </g>
+              </svg>
+              <div class="flex gap-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="64"
+                  height="64"
+                  viewBox="0 0 256 256"
+                >
+                  <!-- Icon from Skill Icons by tandpfun - https://github.com/tandpfun/skill-icons/blob/main/LICENSE -->
+                  <g fill="none">
+                    <rect width="256" height="256" fill="#F4F2ED" rx="60" />
+                    <path
+                      fill="#4E7896"
+                      d="M101.634 182.619s-7.68 4.674 5.345 6.011c15.728 2.004 24.044 1.669 41.407-1.668c0 0 4.674 3.009 11.02 5.344c-39.075 16.696-88.497-1.002-57.772-9.687m-5.009-21.705s-8.35 6.346 4.674 7.679c17.028 1.669 30.391 2.004 53.433-2.667c0 0 3.009 3.341 8.015 5.01c-47.083 14.025-99.85 1.333-66.122-10.019zm92.17 38.07s5.676 4.674-6.346 8.35c-22.376 6.678-93.839 8.685-113.876 0c-7.009-3.009 6.347-7.352 10.686-8.015c4.342-1.002 6.678-1.002 6.678-1.002c-7.68-5.344-51.095 11.02-22.041 15.729c79.813 13.027 145.603-5.676 124.896-15.028zm-83.488-60.781s-36.402 8.685-13.028 11.687c10.019 1.333 29.721 1.002 48.089-.335c15.028-1.334 30.09-4.007 30.09-4.007s-5.345 2.338-9.017 4.674c-37.099 9.693-108.23 5.351-87.858-4.668c17.37-8.35 31.724-7.351 31.724-7.351m65.116 36.401c37.407-19.37 20.037-38.07 8.015-35.731c-3.009.667-4.342 1.334-4.342 1.334s1.001-2.004 3.34-2.667c23.709-8.35 42.413 25.046-7.679 38.07c0 0 .335-.335.666-1.002zm-61.444 52.76c36.067 2.339 91.168-1.334 92.505-18.369c0 0-2.667 6.678-29.72 11.688c-30.722 5.676-68.796 5.009-91.168 1.333c0 0 4.674 4.007 28.386 5.344z"
+                    />
+                    <path
+                      fill="#F58219"
+                      d="M147.685 28s20.704 21.039-19.702 52.76c-32.394 25.712-7.351 40.408 0 57.101c-19.035-17.028-32.722-32.059-23.377-46.085C118.331 71.083 156.062 61.064 147.685 28M137 123.842c9.683 11.02-2.667 21.039-2.667 21.039s24.711-12.686 13.359-28.387c-10.354-15.028-18.368-22.376 25.046-47.425c0 0-68.461 17.028-35.731 54.766z"
+                    />
+                  </g>
+                </svg>
+                <!-- <img
+                  class="inline-block relative w-6 h-6 shrink-0 mr-0.5 box-content rounded-[6px] profile-section-card__image"
+                  data-delayed-url="https://media.licdn.com/dms/image/v2/D4D0BAQEZkMsv5FwbDA/company-logo_100_100/company-logo_100_100/0/1710187635900/aluracursos_logo?e=2147483647&amp;v=beta&amp;t=JCkrEE15NkTo9KLomDLq7l0_9i-3JV2ef4oLXf1SULk"
+                  data-ghost-classes="bg-color-entity-ghost-background"
+                  data-ghost-url="https://static.licdn.com/aero-v1/sc/h/cs8pjfgyw96g44ln9r7tct85f"
+                  alt="Gráfico Formação Java Web: crie aplicações com Servlets e MVC"
+                /> -->
+                <div>
+                  <h3 class="text-[18px] font-semibold">
+                    <a
+                      class="text-[18px] link-styled link-no-visited-state hover:! active:!"
+                      data-tracking-control-name="public_profile_certification-title"
+                      data-tracking-will-navigate
+                      href="https://cursos.alura.com.br/degree/certificate/d7601ba9-9827-4f88-8934-b9289b57cf97?lang&amp;trk=public_profile_certification-title"
+                    >
+                      Formação Java Web
+                    </a>
+                  </h3>
+
+                  <h4 class="text-md">
+                    <a
+                      class="relative hover:underline link-styled hover:! active:! !font-normal"
+                      href="https://br.linkedin.com/school/aluracursos/?trk=public_profile_profile-section-card_subtitle-click"
+                      data-tracking-control-name="public_profile_profile-section-card_subtitle-click"
+                      data-tracking-client-ingraph
+                      data-tracking-will-navigate
+                    >
+                      Alura
+                    </a>
+                  </h4>
+
+                  <span> Emitido em <time>fev. de 2023</time> </span>
+                </div>
+              </div>
+
+              <a
+                class="btn-md btn-tertiary-emphasis -ml-1 inline-block px-[8px] py-0 min-h-0 rounded-[4px] h-[32px] leading-[32px] hover:underline hover:!text-color-link"
+                data-tracking-control-name="public_profile_see-credential"
+                data-tracking-will-navigate
+                href="https://cursos.alura.com.br/degree/certificate/d7601ba9-9827-4f88-8934-b9289b57cf97?lang&amp;trk=public_profile_see-credential"
+                rel="nofollow"
+                target="_blank"
+              >
+                CERTIFICADO
+              </a>
+            </li>
+
+            <li class="relative list-card angular w-[90dvw] md:w-full">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                class="absolute top-2 right-2"
+              >
+                <!-- Icon from Ultimate free icons by Streamline - https://creativecommons.org/licenses/by/4.0/ -->
+                <g
+                  fill="#ff2938"
+                  stroke="#902"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                >
+                  <path
+                    d="M11.25 6.749H12a.75.75 0 0 1 .75.75v5.25m-1.5 0h3m-9.533.401L.75 18l3.75.75l1.5 4.5l3.99-6.332m9.293-3.768L23.25 18l-3.75.75l-1.5 4.5l-3.99-6.332"
+                  />
+                  <path
+                    d="M12.471.915L14.318 2.4l2.369-.118a.75.75 0 0 1 .761.553l.62 2.289l1.986 1.3a.75.75 0 0 1 .29.895L19.5 9.536l.844 2.216a.75.75 0 0 1-.29.895l-1.986 1.3l-.62 2.29a.75.75 0 0 1-.761.553l-2.369-.118l-1.847 1.488a.75.75 0 0 1-.942 0l-1.847-1.491l-2.369.118a.75.75 0 0 1-.761-.553l-.62-2.29l-1.986-1.3a.75.75 0 0 1-.29-.895L4.5 9.536l-.844-2.217a.75.75 0 0 1 .29-.895l1.986-1.3l.62-2.29a.75.75 0 0 1 .761-.552l2.369.118L11.529.915a.75.75 0 0 1 .942 0"
+                  />
+                </g>
+              </svg>
+              <div class="flex gap-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="64"
+                  height="64"
+                  viewBox="0 0 256 256"
+                >
+                  <!-- Icon from Skill Icons by tandpfun - https://github.com/tandpfun/skill-icons/blob/main/LICENSE -->
+                  <g fill="none">
+                    <rect width="256" height="256" fill="#242938" rx="60" />
+                    <path
+                      fill="#E23237"
+                      d="M34.25 61.125L127.325 28l95.525 32.612L207.412 183.7L127.325 228l-78.787-43.725z"
+                    />
+                    <path
+                      fill="#B52E31"
+                      d="M222.85 60.613L127.325 28v200l80.087-44.3z"
+                    />
+                    <path
+                      fill="#fff"
+                      d="m127.469 51.375l-58 129l21.644-.438l11.687-29.149h51.875l12.7 29.375l20.637.437zm.143 41.412l19.625 40.982H110.5l17.169-40.982z"
+                    />
+                  </g>
+                </svg>
+                <!-- <img
+                  class="inline-block relative w-6 h-6 shrink-0 mr-0.5 box-content rounded-[6px] profile-section-card__image"
+                  data-delayed-url="https://media.licdn.com/dms/image/v2/D4D0BAQEZkMsv5FwbDA/company-logo_100_100/company-logo_100_100/0/1710187635900/aluracursos_logo?e=2147483647&amp;v=beta&amp;t=JCkrEE15NkTo9KLomDLq7l0_9i-3JV2ef4oLXf1SULk"
+                  data-ghost-classes="bg-color-entity-ghost-background"
+                  data-ghost-url="https://static.licdn.com/aero-v1/sc/h/cs8pjfgyw96g44ln9r7tct85f"
+                  alt="Gráfico Angular: avançando no design de componentes com acessibilidade"
+                /> -->
+                <div>
+                  <h3
+                    class="text-[18px] leading-regular group-hover:underline font-semibold"
+                  >
+                    <a
+                      class="text-[18px] link-styled link-no-visited-state hover:! active:!"
+                      data-tracking-control-name="public_profile_certification-title"
+                      data-tracking-will-navigate
+                      href="https://cursos.alura.com.br/certificate/71ef3856-77f4-402b-9154-1ea2aa1fdcbb?lang&amp;trk=public_profile_certification-title"
+                    >
+                      Angular: Acessibilidade
+                    </a>
+                  </h3>
+
+                  <h4 class="text-md">
+                    <a
+                      class="relative hover:underline link-styled hover:! active:! !font-normal"
+                      href="https://br.linkedin.com/school/aluracursos/?trk=public_profile_profile-section-card_subtitle-click"
+                      data-tracking-control-name="public_profile_profile-section-card_subtitle-click"
+                      data-tracking-client-ingraph
+                      data-tracking-will-navigate
+                    >
+                      Alura
+                    </a>
+                  </h4>
+
+                  <span> Emitido em <time>jan. de 2023</time> </span>
+                </div>
+              </div>
+
+              <a
+                class="btn-md btn-tertiary-emphasis -ml-1 inline-block px-[8px] py-0 min-h-0 rounded-[4px] h-[32px] leading-[32px] hover:underline hover:!text-color-link"
+                data-tracking-control-name="public_profile_see-credential"
+                data-tracking-will-navigate
+                href="https://cursos.alura.com.br/certificate/71ef3856-77f4-402b-9154-1ea2aa1fdcbb?lang&amp;trk=public_profile_see-credential"
+                rel="nofollow"
+                target="_blank"
+              >
+                CERTIFICADO
+              </a>
+            </li>
+
+            <li class="relative list-card angular w-[90dvw] md:w-full">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                class="absolute top-2 right-2"
+              >
+                <!-- Icon from Ultimate free icons by Streamline - https://creativecommons.org/licenses/by/4.0/ -->
+                <g
+                  fill="none"
+                  stroke="#ffffff"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                >
+                  <path
+                    d="M11.25 6.749H12a.75.75 0 0 1 .75.75v5.25m-1.5 0h3m-9.533.401L.75 18l3.75.75l1.5 4.5l3.99-6.332m9.293-3.768L23.25 18l-3.75.75l-1.5 4.5l-3.99-6.332"
+                  />
+                  <path
+                    d="M12.471.915L14.318 2.4l2.369-.118a.75.75 0 0 1 .761.553l.62 2.289l1.986 1.3a.75.75 0 0 1 .29.895L19.5 9.536l.844 2.216a.75.75 0 0 1-.29.895l-1.986 1.3l-.62 2.29a.75.75 0 0 1-.761.553l-2.369-.118l-1.847 1.488a.75.75 0 0 1-.942 0l-1.847-1.491l-2.369.118a.75.75 0 0 1-.761-.553l-.62-2.29l-1.986-1.3a.75.75 0 0 1-.29-.895L4.5 9.536l-.844-2.217a.75.75 0 0 1 .29-.895l1.986-1.3l.62-2.29a.75.75 0 0 1 .761-.552l2.369.118L11.529.915a.75.75 0 0 1 .942 0"
+                  />
+                </g>
+              </svg>
+              <div class="flex gap-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="64"
+                  height="64"
+                  viewBox="0 0 256 256"
+                >
+                  <!-- Icon from Skill Icons by tandpfun - https://github.com/tandpfun/skill-icons/blob/main/LICENSE -->
+                  <g fill="none">
+                    <rect width="256" height="256" fill="#242938" rx="60" />
+                    <path
+                      fill="#E23237"
+                      d="M34.25 61.125L127.325 28l95.525 32.612L207.412 183.7L127.325 228l-78.787-43.725z"
+                    />
+                    <path
+                      fill="#B52E31"
+                      d="M222.85 60.613L127.325 28v200l80.087-44.3z"
+                    />
+                    <path
+                      fill="#fff"
+                      d="m127.469 51.375l-58 129l21.644-.438l11.687-29.149h51.875l12.7 29.375l20.637.437zm.143 41.412l19.625 40.982H110.5l17.169-40.982z"
+                    />
+                  </g>
+                </svg>
+                <!-- <img
+                  class="inline-block relative w-6 h-6 shrink-0 mr-0.5 box-content rounded-[6px] profile-section-card__image"
+                  data-delayed-url="https://media.licdn.com/dms/image/v2/D4D0BAQEZkMsv5FwbDA/company-logo_100_100/company-logo_100_100/0/1710187635900/aluracursos_logo?e=2147483647&amp;v=beta&amp;t=JCkrEE15NkTo9KLomDLq7l0_9i-3JV2ef4oLXf1SULk"
+                  data-ghost-classes="bg-color-entity-ghost-background"
+                  data-ghost-url="https://static.licdn.com/aero-v1/sc/h/cs8pjfgyw96g44ln9r7tct85f"
+                  alt="Gráfico Angular: controle o fluxo de navegação"
+                /> -->
+                <div class="">
+                  <h3
+                    class="text-[18px] leading-regular group-hover:underline font-semibold"
+                  >
+                    <a
+                      class="text-[18px] link-styled link-no-visited-state hover:! active:!"
+                      data-tracking-control-name="public_profile_certification-title"
+                      data-tracking-will-navigate
+                      href="https://cursos.alura.com.br/certificate/a2b82783-7e58-4774-8e6c-4b21c2c4b4c0?lang&amp;trk=public_profile_certification-title"
+                    >
+                      Angular: Fluxo de Navegação
+                    </a>
+                  </h3>
+
+                  <h4 class="text-md">
+                    <a
+                      class="relative hover:underline link-styled hover:! active:! !font-normal"
+                      href="https://br.linkedin.com/school/aluracursos/?trk=public_profile_profile-section-card_subtitle-click"
+                      data-tracking-control-name="public_profile_profile-section-card_subtitle-click"
+                      data-tracking-client-ingraph
+                      data-tracking-will-navigate
+                    >
+                      Alura
+                    </a>
+                  </h4>
+
+                  <span> Emitido em <time>jan. de 2023</time> </span>
+                </div>
+              </div>
+              <a
+                class="btn-md btn-tertiary-emphasis -ml-1 inline-block px-[8px] py-0 min-h-0 rounded-[4px] h-[32px] leading-[32px] hover:underline hover:!text-color-link"
+                data-tracking-control-name="public_profile_see-credential"
+                data-tracking-will-navigate
+                href="https://cursos.alura.com.br/certificate/a2b82783-7e58-4774-8e6c-4b21c2c4b4c0?lang&amp;trk=public_profile_see-credential"
+                rel="nofollow"
+                target="_blank"
+              >
+                CERTIFICADO
+              </a>
+            </li>
+
+            <li class="relative list-card angular w-[90dvw] md:w-full">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                class="absolute top-2 right-2"
+              >
+                <!-- Icon from Ultimate free icons by Streamline - https://creativecommons.org/licenses/by/4.0/ -->
+                <g
+                  fill="#ff2938"
+                  stroke="#902"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                >
+                  <path
+                    d="M11.25 6.749H12a.75.75 0 0 1 .75.75v5.25m-1.5 0h3m-9.533.401L.75 18l3.75.75l1.5 4.5l3.99-6.332m9.293-3.768L23.25 18l-3.75.75l-1.5 4.5l-3.99-6.332"
+                  />
+                  <path
+                    d="M12.471.915L14.318 2.4l2.369-.118a.75.75 0 0 1 .761.553l.62 2.289l1.986 1.3a.75.75 0 0 1 .29.895L19.5 9.536l.844 2.216a.75.75 0 0 1-.29.895l-1.986 1.3l-.62 2.29a.75.75 0 0 1-.761.553l-2.369-.118l-1.847 1.488a.75.75 0 0 1-.942 0l-1.847-1.491l-2.369.118a.75.75 0 0 1-.761-.553l-.62-2.29l-1.986-1.3a.75.75 0 0 1-.29-.895L4.5 9.536l-.844-2.217a.75.75 0 0 1 .29-.895l1.986-1.3l.62-2.29a.75.75 0 0 1 .761-.552l2.369.118L11.529.915a.75.75 0 0 1 .942 0"
+                  />
+                </g>
+              </svg>
+              <div class="flex gap-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="64"
+                  height="64"
+                  viewBox="0 0 256 256"
+                >
+                  <!-- Icon from Skill Icons by tandpfun - https://github.com/tandpfun/skill-icons/blob/main/LICENSE -->
+                  <g fill="none">
+                    <rect width="256" height="256" fill="#242938" rx="60" />
+                    <path
+                      fill="#E23237"
+                      d="M34.25 61.125L127.325 28l95.525 32.612L207.412 183.7L127.325 228l-78.787-43.725z"
+                    />
+                    <path
+                      fill="#B52E31"
+                      d="M222.85 60.613L127.325 28v200l80.087-44.3z"
+                    />
+                    <path
+                      fill="#fff"
+                      d="m127.469 51.375l-58 129l21.644-.438l11.687-29.149h51.875l12.7 29.375l20.637.437zm.143 41.412l19.625 40.982H110.5l17.169-40.982z"
+                    />
+                  </g>
+                </svg>
+                <!-- <img
+                  class="inline-block relative w-6 h-6 shrink-0 mr-0.5 box-content rounded-[6px] profile-section-card__image"
+                  data-delayed-url="https://media.licdn.com/dms/image/v2/D4D0BAQEZkMsv5FwbDA/company-logo_100_100/company-logo_100_100/0/1710187635900/aluracursos_logo?e=2147483647&amp;v=beta&amp;t=JCkrEE15NkTo9KLomDLq7l0_9i-3JV2ef4oLXf1SULk"
+                  data-ghost-classes="bg-color-entity-ghost-background"
+                  data-ghost-url="https://static.licdn.com/aero-v1/sc/h/cs8pjfgyw96g44ln9r7tct85f"
+                  alt="Gráfico Angular: boas práticas em arquiteturas e formulários"
+                /> -->
+                <div class="">
+                  <h3
+                    class="text-[18px] leading-regular group-hover:underline font-semibold"
+                  >
+                    <a
+                      class="text-[18px] link-styled link-no-visited-state hover:! active:!"
+                      data-tracking-control-name="public_profile_certification-title"
+                      data-tracking-will-navigate
+                      href="https://cursos.alura.com.br/certificate/260d328f-c906-4931-8927-c640f96b8e57?lang&amp;trk=public_profile_certification-title"
+                    >
+                      Angular: Boas Práticas
+                    </a>
+                  </h3>
+
+                  <h4 class="text-md">
+                    <a
+                      class="relative hover:underline link-styled hover:! active:! !font-normal"
+                      href="https://br.linkedin.com/school/aluracursos/?trk=public_profile_profile-section-card_subtitle-click"
+                      data-tracking-control-name="public_profile_profile-section-card_subtitle-click"
+                      data-tracking-client-ingraph
+                      data-tracking-will-navigate
+                    >
+                      Alura
+                    </a>
+                  </h4>
+
+                  <span> Emitido em <time>dez. de 2022</time> </span>
+                </div>
+              </div>
+              <a
+                class="btn-md btn-tertiary-emphasis -ml-1 inline-block px-[8px] py-0 min-h-0 rounded-[4px] h-[32px] leading-[32px] hover:underline hover:!text-color-link"
+                data-tracking-control-name="public_profile_see-credential"
+                data-tracking-will-navigate
+                href="https://cursos.alura.com.br/certificate/260d328f-c906-4931-8927-c640f96b8e57?lang&amp;trk=public_profile_see-credential"
+                rel="nofollow"
+                target="_blank"
+              >
+                CERTIFICADO
+              </a>
+            </li>
+
+            <li class="relative list-card angular w-[90dvw] md:w-full">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                class="absolute top-2 right-2"
+              >
+                <!-- Icon from Ultimate free icons by Streamline - https://creativecommons.org/licenses/by/4.0/ -->
+                <g
+                  fill="#ff2938"
+                  stroke="#902"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                >
+                  <path
+                    d="M11.25 6.749H12a.75.75 0 0 1 .75.75v5.25m-1.5 0h3m-9.533.401L.75 18l3.75.75l1.5 4.5l3.99-6.332m9.293-3.768L23.25 18l-3.75.75l-1.5 4.5l-3.99-6.332"
+                  />
+                  <path
+                    d="M12.471.915L14.318 2.4l2.369-.118a.75.75 0 0 1 .761.553l.62 2.289l1.986 1.3a.75.75 0 0 1 .29.895L19.5 9.536l.844 2.216a.75.75 0 0 1-.29.895l-1.986 1.3l-.62 2.29a.75.75 0 0 1-.761.553l-2.369-.118l-1.847 1.488a.75.75 0 0 1-.942 0l-1.847-1.491l-2.369.118a.75.75 0 0 1-.761-.553l-.62-2.29l-1.986-1.3a.75.75 0 0 1-.29-.895L4.5 9.536l-.844-2.217a.75.75 0 0 1 .29-.895l1.986-1.3l.62-2.29a.75.75 0 0 1 .761-.552l2.369.118L11.529.915a.75.75 0 0 1 .942 0"
+                  />
+                </g>
+              </svg>
+              <div class="flex gap-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="64"
+                  height="64"
+                  viewBox="0 0 256 256"
+                >
+                  <!-- Icon from Skill Icons by tandpfun - https://github.com/tandpfun/skill-icons/blob/main/LICENSE -->
+                  <g fill="none">
+                    <rect width="256" height="256" fill="#242938" rx="60" />
+                    <path
+                      fill="#E23237"
+                      d="M34.25 61.125L127.325 28l95.525 32.612L207.412 183.7L127.325 228l-78.787-43.725z"
+                    />
+                    <path
+                      fill="#B52E31"
+                      d="M222.85 60.613L127.325 28v200l80.087-44.3z"
+                    />
+                    <path
+                      fill="#fff"
+                      d="m127.469 51.375l-58 129l21.644-.438l11.687-29.149h51.875l12.7 29.375l20.637.437zm.143 41.412l19.625 40.982H110.5l17.169-40.982z"
+                    />
+                  </g>
+                </svg>
+                <!-- <img
+                  class="inline-block relative w-6 h-6 shrink-0 mr-0.5 box-content rounded-[6px] profile-section-card__image"
+                  data-delayed-url="https://media.licdn.com/dms/image/v2/D4D0BAQEZkMsv5FwbDA/company-logo_100_100/company-logo_100_100/0/1710187635900/aluracursos_logo?e=2147483647&amp;v=beta&amp;t=JCkrEE15NkTo9KLomDLq7l0_9i-3JV2ef4oLXf1SULk"
+                  data-ghost-classes="bg-color-entity-ghost-background"
+                  data-ghost-url="https://static.licdn.com/aero-v1/sc/h/cs8pjfgyw96g44ln9r7tct85f"
+                  alt="Gráfico Angular: design de componentes com acessibilidade"
+                /> -->
+                <div class="">
+                  <h3
+                    class="text-[18px] leading-regular group-hover:underline font-semibold"
+                  >
+                    <a
+                      class="text-[18px] link-styled link-no-visited-state hover:! active:!"
+                      data-tracking-control-name="public_profile_certification-title"
+                      data-tracking-will-navigate
+                      href="https://cursos.alura.com.br/certificate/f20da717-8b81-4b33-b6b7-12bd1261ee1d?lang&amp;trk=public_profile_certification-title"
+                    >
+                      Angular: Acessibilidade
+                    </a>
+                  </h3>
+
+                  <h4 class="text-md">
+                    <a
+                      class="relative hover:underline link-styled hover:! active:! !font-normal"
+                      href="https://br.linkedin.com/school/aluracursos/?trk=public_profile_profile-section-card_subtitle-click"
+                      data-tracking-control-name="public_profile_profile-section-card_subtitle-click"
+                      data-tracking-client-ingraph
+                      data-tracking-will-navigate
+                    >
+                      Alura
+                    </a>
+                  </h4>
+
+                  <span> Emitido em <time>dez. de 2022</time> </span>
+                </div>
+              </div>
+              <a
+                class="btn-md btn-tertiary-emphasis -ml-1 inline-block px-[8px] py-0 min-h-0 rounded-[4px] h-[32px] leading-[32px] hover:underline hover:!text-color-link"
+                data-tracking-control-name="public_profile_see-credential"
+                data-tracking-will-navigate
+                href="https://cursos.alura.com.br/certificate/f20da717-8b81-4b33-b6b7-12bd1261ee1d?lang&amp;trk=public_profile_see-credential"
+                rel="nofollow"
+                target="_blank"
+              >
+                CERTIFICADO
+              </a>
+            </li>
+
+            <li class="relative list-card university w-[90dvw] md:w-full">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                class="absolute top-2 right-2"
+              >
+                <!-- Icon from Ultimate free icons by Streamline - https://creativecommons.org/licenses/by/4.0/ -->
+                <g
+                  fill="#ff2938"
+                  stroke="#902"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                >
+                  <path
+                    d="M11.25 6.749H12a.75.75 0 0 1 .75.75v5.25m-1.5 0h3m-9.533.401L.75 18l3.75.75l1.5 4.5l3.99-6.332m9.293-3.768L23.25 18l-3.75.75l-1.5 4.5l-3.99-6.332"
+                  />
+                  <path
+                    d="M12.471.915L14.318 2.4l2.369-.118a.75.75 0 0 1 .761.553l.62 2.289l1.986 1.3a.75.75 0 0 1 .29.895L19.5 9.536l.844 2.216a.75.75 0 0 1-.29.895l-1.986 1.3l-.62 2.29a.75.75 0 0 1-.761.553l-2.369-.118l-1.847 1.488a.75.75 0 0 1-.942 0l-1.847-1.491l-2.369.118a.75.75 0 0 1-.761-.553l-.62-2.29l-1.986-1.3a.75.75 0 0 1-.29-.895L4.5 9.536l-.844-2.217a.75.75 0 0 1 .29-.895l1.986-1.3l.62-2.29a.75.75 0 0 1 .761-.552l2.369.118L11.529.915a.75.75 0 0 1 .942 0"
+                  />
+                </g>
+              </svg>
+              <div class="flex gap-2">
+                <img
+                  class="inline-block relative w-6 h-6 shrink-0 mr-0.5 box-content rounded-[6px] profile-section-card__image"
+                  data-delayed-url="https://media.licdn.com/dms/image/v2/C4D0BAQEr9DAewtvRSQ/company-logo_100_100/company-logo_100_100/0/1633706590981/resilia_educacao_logo?e=2147483647&amp;v=beta&amp;t=or_DJkUQg6Uwt8kjuFObixt2_OwHrPYFB7_NfGwEeK8"
+                  data-ghost-classes="bg-color-entity-ghost-background"
+                  data-ghost-url="https://static.licdn.com/aero-v1/sc/h/cs8pjfgyw96g44ln9r7tct85f"
+                  alt="Gráfico Desenvolvimento web fullStack"
+                />
+                <div class="">
+                  <h3
+                    class="text-[18px] leading-regular group-hover:underline font-semibold"
+                  >
+                    <a
+                      class="text-[18px] link-styled link-no-visited-state hover:! active:!"
+                      data-tracking-control-name="public_profile_certification-title"
+                      data-tracking-will-navigate
+                      href="https://drive.google.com/file/d/1ojGa48mSx4n0F71uXAVYEsf78KCNxfxF/view?usp=sharing&amp;trk=public_profile_certification-title"
+                    >
+                      <span class="title">Desenvolvimento web fullStack</span>
+                    </a>
+                  </h3>
+
+                  <h4 class="text-md">
+                    <a
+                      class="relative hover:underline link-styled hover:! active:! !font-normal"
+                      href="https://br.linkedin.com/school/resilia-educacao/?trk=public_profile_profile-section-card_subtitle-click"
+                      data-tracking-control-name="public_profile_profile-section-card_subtitle-click"
+                      data-tracking-client-ingraph
+                      data-tracking-will-navigate
+                    >
+                      Resilia Educação
+                    </a>
+                  </h4>
+
+                  <span> Emitido em <time>set. de 2021</time> </span>
+                </div>
+              </div>
+              <a
+                class="btn-md btn-tertiary-emphasis -ml-1 inline-block px-[8px] py-0 min-h-0 rounded-[4px] h-[32px] leading-[32px] hover:underline hover:!text-color-link"
+                data-tracking-control-name="public_profile_see-credential"
+                data-tracking-will-navigate
+                href="https://drive.google.com/file/d/1ojGa48mSx4n0F71uXAVYEsf78KCNxfxF/view?usp=sharing&amp;trk=public_profile_see-credential"
+                rel="nofollow"
+                target="_blank"
+              >
+                CERTIFICADO
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ============================================================================================== -->
+      <!--                          RECOMENDAÇÕES RECEBIDAS                                               -->
+      <!-- ============================================================================================== -->
+      <section id="RECOMEDAÇÕES relative" class="p-2">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="32"
+          height="32"
+          viewBox="0 0 20 20"
+          class="linkedin relative"
+        >
+          <!-- Icon from Entypo+ Social by Daniel Bruce - https://creativecommons.org/licenses/by-sa/4.0/ -->
+          <path
+            fill="#fff"
+            d="M5 3c0 1.062-.71 1.976-2.001 1.976C1.784 4.976 1 4.114 1 3.052C1 1.962 1.76 1 3 1s1.976.91 2 2M1 19V6h4v13zm6-8.556c0-1.545-.051-2.836-.102-3.951h3.594l.178 1.723h.076c.506-.811 1.746-2 3.822-2C17.1 6.216 19 7.911 19 11.558V19h-4v-6.861c0-1.594-.607-2.81-2-2.81c-1.062 0-1.594.86-1.873 1.569c-.102.254-.127.608-.127.963V19H7z"
+          />
+        </svg>
+        <h2 class="text-xl mb-2 relative">Recomendações recebidas</h2>
+        <div class="break-words">
+          <ul class="flex flex-wrap gap-9 md:grid grid-cols-2 grid-rows-3">
+            <li class="list-card row-start-1 col-start-2">
+              <div class="flex gap-4">
+                <img
+                  src="https://media.licdn.com/dms/image/v2/D4D03AQE6-TZpLWw2og/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1705288099881?e=1763596800&amp;v=beta&amp;t=FjrejIDLj6dDyYfua-cRhCaj6wCwiwj-L-MxITfRvN0"
+                  loading="lazy"
+                  alt="Marcelo Neri"
+                  id="ember79"
+                  class="profile-picture"
+                />
+                <div>
+                  <h3>Marcelo Neri</h3>
+                  <button>
+                    <a
+                      class="faded-blue"
+                      href="https://br.linkedin.com/in/marcelo-neri-neri?trk=public_profile_recommendations"
+                    >
+                      ver perfil
+                    </a>
+                  </button>
+                </div>
+              </div>
+              <p class="text-justify">
+                “Tive a oportunidade de trabalhar com o Patrick e posso afirmar
+                que ele demostrou um grande potencial de crescimento na area de
+                programação. Sempre cumpriu seus horários com pontualmente, alem
+                de encarar os desafios que lhe foram propostos como de se tornar
+                um desenvolvedor FullStack. Recomento Patrick para oportunidade
+                qe exija dedicação, pensamento analitico e vontade de crescer.”
+              </p>
+            </li>
+            <li class="list-card row-span-2">
+              <div class="flex gap-4">
+                <img
+                  class="profile-picture"
+                  data-delayed-url="https://media.licdn.com/dms/image/v2/D4D03AQHPtxrZz7bkUg/profile-displayphoto-shrink_400_400/B4DZS47.xdH0Ag-/0/1738269519716?e=2147483647&amp;v=beta&amp;t=SmruaZGIYVwWKcxhXoaUAK3XnWp9t91hAd0aEccIyiE"
+                  data-ghost-classes="bg-color-entity-ghost-background"
+                  data-ghost-url="https://static.licdn.com/aero-v1/sc/h/9c8pery4andzj6ohjkjp54ma2"
+                  alt="Clique aqui para ver o perfil de Alexandre Koutroularis"
+                />
+                <div>
+                  <h3>Alexandre Koutroularis</h3>
+                  <button>
+                    <a
+                      class="faded-blue"
+                      href="https://br.linkedin.com/in/alexandre-koutroularis-650b051b0?trk=public_profile_recommendations"
+                    >
+                      ver perfil
+                    </a>
+                  </button>
+                </div>
+              </div>
+              <p class="show-more-less-text__text--less">
+                “Tive a oportunidade de trabalhar com o Patrick e posso afirmar
+                que ele é um desenvolvedor Full Stack excepcional. Com um vasto
+                conhecimento tanto no front-end quanto no back-end, ele entrega
+                soluções eficientes e bem estruturadas, sempre buscando as
+                melhores práticas de desenvolvimento. Além de suas habilidades
+                técnicas, Patrick é um profissional proativo, colaborativo e com
+                excelente comunicação, o que torna o trabalho em equipe ainda
+                mais produtivo. Sua capacidade de resolver problemas com
+                agilidade e sua dedicação aos projetos fazem toda a diferença.”
+              </p>
+            </li>
+            <li class="list-card">
+              <div class="flex gap-4">
+                <img
+                  src="https://media.licdn.com/dms/image/v2/D4D03AQHxqL_jjmYBmQ/profile-displayphoto-shrink_100_100/B4DZcZ1uPcGUAY-/0/1748485203656?e=1763596800&amp;v=beta&amp;t=3O6WvyKoEBhphRbAauTIOWVPf3AaoCSNrUF9Indmwgw"
+                  loading="lazy"
+                  height="48"
+                  alt="Matheus Jordan"
+                  id="ember95"
+                  class="profile-picture"
+                />
+                <div>
+                  <h3>Matheus Jordan</h3>
+                  <button>
+                    <a
+                      class="faded-blue"
+                      href="https://www.linkedin.com/in/matheus-jordan-a59956b7?trk=public_profile_recommendations"
+                    >
+                      ver perfil
+                    </a>
+                  </button>
+                </div>
+              </div>
+              <p class="show-more-less-text__text--less">
+                “Patrick é um ótimo profissional e colega de equipe que tem como
+                sua principal característica a proatividade e a vontade de
+                aprender. Possui também conhecimento sólido em Angular e Java.“
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <script
+      src="https://static.licdn.com/aero-v1/sc/h/63v8bmda993woks6mpwwd8ly3"
+      async
+    ></script>
+    <script src="./index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+.angular {
+  --bg-dark: hsl(4, 70%, 8%); /* Deep Angular-inspired background */
+  --bg-mid: hsl(4, 70%, 12%); /* Slightly lighter red tone */
+  --bg-light: hsl(4, 60%, 18%); /* Warm red-tinted surface */
+  --border: hsl(4, 60%, 35%); /* Muted red border for separation */
+  --text: hsl(0, 0%, 90%); /* Light text for readability */
+  --text-muted: hsl(0, 0%, 70%); /* Softer text tone */
+  --text-faded: hsl(4, 40%, 50%); /* Subtle reddish-gray for faded text */
+  --text-small: 14px;
+  --text-faded-blue: hsl(
+    210,
+    50%,
+    45%
+  ); /* Slightly more vivid blue for contrast */
+  --text-blue: hsl(210, 100%, 70%); /* Highlight blue (for links or accents) */
+}
+
+.java {
+  --bg-dark: hsl(25, 65%, 7%); /* Deep coffee brown base */
+  --bg-mid: hsl(25, 60%, 12%); /* Warm brown mid-tone */
+  --bg-light: hsl(25, 50%, 18%); /* Slightly lighter brown for cards */
+  --border: hsl(25, 40%, 35%); /* Muted brown border */
+  --text: hsl(0, 0%, 98%); /* Light text for contrast */
+  --text-muted: hsl(0, 0%, 80%); /* Soft muted text */
+  --text-faded: hsl(25, 35%, 55%); /* Faded orange-brown text */
+  --text-small: 14px;
+  --text-faded-blue: hsl(
+    210,
+    50%,
+    40%
+  ); /* Cool contrast tone (for code highlights) */
+  --text-blue: hsl(210, 100%, 70%); /* Brighter highlight blue */
+}

@@ -1,0 +1,9 @@
+.university {
+    --bg-dark: hsl(210, 40%, 5%);
+    --bg-mid: hsl(210, 40%, 15%);
+    --bg-light: hsl(210, 40%, 25%);
+    --border: hsl(48, 90%, 45%);
+    --text: hsl(48, 90%, 45%);
+    --text-faded: hsl(210, 20%, 55%);
+    --text-muted: hsl(210, 20%, 75%);
+}

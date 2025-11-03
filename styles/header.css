@@ -1,0 +1,5 @@
+header {
+    padding: 2rem;
+    z-index: 10;
+    background-color: var(--bg-dark);
+}
