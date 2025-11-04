@@ -34,7 +34,7 @@ This portfolio was developed to present my professional journey, highlight my we
 
 ![Portfolio Screenshot](./preview.png)
 
-🔗 **Live Demo:** [https://yourusername.github.io/your-portfolio](https://yourusername.github.io/your-portfolio)
+🔗 **Live Demo:** [https://patolinodd.github.io/PATOLINODD](https://patolinodd.github.io/PATOLINODD)
 
 
 ## 🚀 Run Locally
@@ -42,7 +42,7 @@ This portfolio was developed to present my professional journey, highlight my we
 #### You might want to run this project on your local machine
 1. Clone the repository  
    ```bash
-   git clone https://github.com/yourusername/your-portfolio.git
+   git clone https://github.com/PATOLINODD/PATOLINODD.git
 
 
 
@@ -50,7 +50,7 @@ This portfolio was developed to present my professional journey, highlight my we
 
 - Email: your@email.com  
 - LinkedIn: [linkedin.com/in/patrickoliveira97](https://linkedin.com/in/patrickoliveira97)  
-- GitHub: [github.com/yourusername](https://github.com/yourusername)
+- GitHub: [https://github.com/PATOLINODD](https://github.com/PATOLINODD)
 
 
 ## 📄 License
