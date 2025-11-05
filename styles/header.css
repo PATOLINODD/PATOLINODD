@@ -6,12 +6,15 @@ header {
   padding: 1rem 9rem;
   background: hsl(0, 0%, 10%);
 }
-
 .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  z-index: 100;
+  z-index: 10;
 }
+
+.draw-me {
+  stroke: hsl(30, 70%, 50%);
+  stroke-width: 16px;
+}
+
 nav ul {
   display: flex;
   gap: 1.5rem;
@@ -70,6 +73,7 @@ nav ul li {
     display: flex;
   }
   header {
-    padding: 1rem 2rem !important;
+    --default-pad-sides: 2rem;
+    padding: 1rem var(--default-pad-sides) !important;
   }
 }
