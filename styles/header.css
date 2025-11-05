@@ -1,5 +1,75 @@
 header {
-    padding: 2rem;
-    z-index: 10;
-    background-color: var(--bg-dark);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row wrap;
+  padding: 1rem 9rem;
+  background: hsl(0, 0%, 10%);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  z-index: 100;
+}
+nav ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+nav ul li {
+  cursor: pointer;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  height: 100vh;
+  width: 70%;
+  background-color: hsl(0, 0%, 10%);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  transition: left 0.3s ease-out;
+  z-index: 10;
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 6px;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+}
+
+#close {
+  cursor: pointer;
+  position: absolute;
+  right: 1rem;
+  width: 20px;
+}
+
+@media (max-width: 760px) {
+  nav ul {
+    display: none;
+  }
+  .burger {
+    display: flex;
+  }
+  header {
+    padding: 1rem 2rem !important;
+  }
 }

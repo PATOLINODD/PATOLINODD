@@ -15,6 +15,22 @@
     <!-- ScrollSmoother requires ScrollTrigger -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollToPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/DrawSVGPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/MorphSVGPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
+      integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/all.min.js"
+      integrity="sha512-fxASHhXi6WjjUR9Hr8qt2IxNW2AzyZOpoPi4+UgVU0lTFNKMQ8INkZaQ5ZED2aAldHuHNaLlaHuwQ1oGT+LHhw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <!-- =======================================================================================  -->
     <!--                                  TAILWIND                                                -->
     <!-- =======================================================================================  -->
@@ -124,159 +140,268 @@
     <link rel="stylesheet" href="./styles/courses.css" />
   </head>
   <body class="">
-    <div id="smooth-content">
-      <header class="relative">
-        <nav class="flex justify-between items-center relative">
-          <div>PATRICK</div>
-          <ul class="flex justify-between items-center gap-4">
-            <li class="section">PROJETOS</li>
-            <li class="section">CONQUISTAS</li>
-            <li class="section">RECOMEDAÇÕES</li>
-            <li class="section">CONTATO</li>
-            <li class="section">CURRICULO</li>
+    <main id="smooth-content">
+      <header>
+        <div class="burger">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="logo">
+          <svg
+            width="200"
+            height="60"
+            viewBox="0 0 2385 632"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            id="logo"
+          >
+            <path
+              class="draw-me"
+              d="M275.841 516.501C271.335 509.963 267.814 505.565 263.925 501.373C252.393 489.031 243.655 480.652 234.195 472.995C231.492 470.743 229.06 468.761 228.79 468.491C227.348 466.869 209.78 454.077 209.059 454.077C208.609 454.077 208.068 453.716 207.888 453.266C207.798 452.815 204.465 450.383 200.501 447.771L193.474 443.086L186.086 443.717C182.122 443.987 176.987 444.617 174.735 445.068C172.482 445.518 165.455 446.509 158.969 447.32C152.572 448.131 142.572 449.842 136.896 451.014C107.526 457.23 102.481 458.221 93.202 459.482C88.7875 460.112 83.9226 460.923 82.5712 461.374C81.1297 461.824 74.0125 462.455 66.7151 462.725C52.9311 463.356 47.9761 462.635 40.0481 458.761C31.9398 454.797 25.5434 446.059 23.4713 436.239C22.0298 429.303 22.21 401.826 23.7415 394.168C26.7145 379.845 30.9488 367.412 37.5255 354.53C42.0301 345.701 50.3185 331.738 53.4717 327.774L56.0843 324.351L55.4537 311.108C55.1834 303.72 54.2825 293.901 53.4717 289.216C50.6788 271.559 49.2374 263.361 47.5257 255.884C46.5346 251.65 45.0932 244.983 44.1923 241.02C41.8499 230.659 39.1472 221.921 34.102 208.138C31.5795 201.471 28.7866 193.543 27.8857 190.571C26.8947 187.598 25.3632 182.733 24.4623 179.76C19.6874 164.715 19.1469 162.463 14.9126 140.572C14.1017 136.248 13.7414 129.942 13.9216 123.095C14.1918 113.005 14.1017 112.014 11.2188 103.276C7.07462 90.9337 5.09261 77.7809 5.00252 63.0966C4.91243 47.9619 7.2548 32.2867 9.32691 34.3587C9.50709 34.5389 10.7684 39.764 12.0296 45.98C14.6423 58.7724 17.9757 69.8532 20.8586 75.4386C23.0208 79.8529 24.2821 80.3934 24.2821 77.0602C24.2821 75.799 24.6424 74.0873 25.0929 73.1864C25.5434 72.3756 26.6245 69.0424 27.4353 65.7992C29.2371 58.6823 37.3453 41.4756 42.3904 33.9083C48.877 24.2689 63.652 10.5756 72.481 5.98112C73.9224 5.26042 75.3639 4.80999 75.8143 5.08026C76.7153 5.62078 75.3639 8.32342 73.2918 9.94499C70.8593 12.1071 60.7691 27.9625 56.3546 36.701C49.6878 49.9438 42.1202 76.6098 44.913 76.6098C45.3635 76.6098 46.6247 75.5287 47.6157 74.0873C55.5438 63.7272 62.0304 56.8806 70.2287 50.124C80.409 41.6558 93.2921 34.5389 95.184 36.3406C95.4543 36.701 91.6704 40.9351 86.7154 45.7998C76.7153 55.4392 69.3278 64.0876 63.4718 73.0063C58.8772 80.0331 54.9131 87.7806 54.9131 89.6725C54.9131 91.4742 59.1474 91.4742 67.7962 89.6725C71.3999 89.0419 77.3459 87.9608 81.0396 87.4203C89.7785 86.0689 130.86 85.2581 139.599 86.2491L146.266 86.9698C150.5 87.501 155.005 87.9608 166.176 88.3212C175.996 88.6815 194.465 95.2579 200.681 100.753C201.942 100.753 223.204 118.861 228.699 125.347C231.492 128.59 236.177 134.446 239.15 138.32C247.168 148.68 262.844 167.508 270.232 175.616C273.835 179.58 277.979 184.445 279.421 186.426L282.124 190.12H278.34C273.295 190.12 274.015 191.471 281.043 195.255C284.286 196.967 287.529 198.949 288.25 199.579C288.971 200.21 293.115 202.552 297.349 204.804C301.583 207.057 305.908 209.309 306.809 209.849C307.71 210.39 312.755 212.732 317.98 214.984C336.629 223.272 334.286 222.822 356.269 223.002C367.17 223.092 378.341 223.452 381.044 223.813C383.747 224.083 388.071 224.624 390.503 224.894C400.954 226.155 410.504 228.768 416.63 232.191C422.666 235.524 434.198 245.884 438.252 251.74L440.144 254.353L450.414 253.271C456.09 252.641 461.766 251.83 463.027 251.38C464.288 251.019 469.333 249.938 474.289 249.127C487.532 246.785 499.514 243.542 513.478 238.407C540.235 228.587 543.479 226.786 547.713 218.948C551.947 211.291 569.605 184.174 572.488 180.751C573.029 180.21 574.56 178.229 575.912 176.427C578.524 172.823 590.506 158.229 596.362 151.382C609.966 135.617 624.201 124.446 634.381 121.654C639.786 120.212 648.976 120.843 653.21 122.915C657.624 124.987 663.39 130.933 663.661 133.545C663.751 134.716 664.832 139.311 666.093 143.815C670.057 158.049 669.967 173.454 665.823 192.823C663.841 201.651 663.39 203.183 656.273 221.11C646.633 245.524 632.489 267.325 611.227 290.928C598.705 304.802 580.236 321.017 567.623 329.215C559.605 334.44 542.758 343.629 538.343 345.161C535.1 346.332 528.974 351.737 527.893 354.35C527.623 354.98 525.19 358.854 522.397 363.088C519.604 367.322 515.28 374.169 512.577 378.403C502.127 395.159 487.262 411.735 471.135 424.348C460.324 432.906 455.82 435.879 441.856 443.897C438.702 445.698 418.612 455.608 414.828 457.23C412.846 458.04 408.972 459.662 406.27 460.923C400.143 463.536 392.756 466.058 383.206 468.851C379.152 470.022 375.458 471.193 375.008 471.464C373.476 472.454 353.206 476.238 343.656 477.409C340.413 477.77 339.061 478.4 338.881 479.481C338.611 480.833 340.863 485.067 350.413 501.012C351.764 503.264 365 524.001 404.5 536.501C444 549.001 2156.5 753.836 2380.5 501.373"
+            />
+            <mask
+              id="path-2-outside-1_372_207"
+              maskUnits="userSpaceOnUse"
+              x="696"
+              y="196.001"
+              width="1587"
+              height="300"
+            >
+              <path
+                class="draw-me"
+                d="M2255.18 298.875H2191.78L2114.07 372.57V229.335H2060.89V482.269H2114.07V435.723L2139.76 410.464L2197.58 482.269H2262L2178.81 376.521L2255.18 298.875Z"
+              />
+              <path
+                class="draw-me"
+                d="M1845.16 473.07C1860.62 481.024 1878.23 485.001 1898 485.001C1917.31 485.001 1934.13 481.024 1948.44 473.07C1962.76 464.889 1973.33 453.413 1980.14 438.641L1938.9 416.143C1934.13 425.006 1928.11 431.483 1920.83 435.573C1913.79 439.437 1906.06 441.368 1897.66 441.368C1888.57 441.368 1880.39 439.323 1873.11 435.232C1865.84 431.142 1860.05 425.347 1855.73 417.847C1851.64 410.348 1849.59 401.258 1849.59 390.577C1849.59 379.896 1851.64 370.806 1855.73 363.306C1860.05 355.807 1865.84 350.012 1873.11 345.921C1880.39 341.831 1888.57 339.786 1897.66 339.786C1906.06 339.786 1913.79 341.831 1920.83 345.921C1928.11 350.012 1934.13 356.375 1938.9 365.011L1980.14 342.853C1973.33 327.855 1962.76 316.378 1948.44 308.424C1934.13 300.243 1917.31 296.153 1898 296.153C1878.23 296.153 1860.62 300.243 1845.16 308.424C1829.71 316.378 1817.55 327.514 1808.69 341.831C1800.06 355.921 1795.74 372.169 1795.74 390.577C1795.74 408.757 1800.06 425.006 1808.69 439.323C1817.55 453.64 1829.71 464.889 1845.16 473.07Z"
+              />
+              <path
+                class="draw-me"
+                d="M1655.73 298.881V482.275H1708.91V298.881H1655.73Z"
+              />
+              <path
+                class="draw-me"
+                d="M1458.81 298.88V482.274H1511.98V395.69C1511.98 378.191 1516.42 365.352 1525.28 357.17C1534.37 348.762 1546.18 344.558 1560.73 344.558C1562.77 344.558 1564.7 344.671 1566.52 344.899C1568.34 344.899 1570.39 345.012 1572.66 345.24V296.153C1555.39 296.153 1540.73 299.561 1528.69 306.379C1520.97 310.601 1514.61 316.128 1509.6 322.96V298.88H1458.81Z"
+              />
+              <path
+                class="draw-me"
+                d="M1284.08 468.631C1296.12 479.539 1312.94 484.993 1334.53 484.993C1342.71 484.993 1350.55 484.084 1358.04 482.266C1365.77 480.221 1372.36 477.267 1377.81 473.403L1363.5 435.906C1357.59 440.451 1350.43 442.724 1342.02 442.724C1334.98 442.724 1329.41 440.679 1325.32 436.588C1321.23 432.27 1319.19 426.248 1319.19 418.521V343.868H1364.86V302.962H1319.19V258.307H1266.01V302.962H1237.72V343.868H1266.01V419.203C1266.01 441.02 1272.03 457.496 1284.08 468.631Z"
+              />
+              <path
+                class="draw-me"
+                d="M706 482.266V243.649H809.281C830.641 243.649 849.048 247.172 864.5 254.217C879.953 261.034 891.883 270.92 900.291 283.873C908.699 296.827 912.902 312.28 912.902 330.233C912.902 347.959 908.699 363.299 900.291 376.252C891.883 389.206 879.953 399.205 864.5 406.25C849.048 413.068 830.641 416.476 809.281 416.476H761.219V482.266H706ZM844.389 360.572C835.982 367.844 823.256 371.48 806.213 371.48H761.219V288.646H806.213C823.256 288.646 835.982 292.282 844.389 299.554C852.797 306.826 857.001 317.053 857.001 330.233C857.001 343.187 852.797 353.3 844.389 360.572Z"
+              />
+              <path
+                class="draw-me"
+                d="M1107.12 374.555C1107.12 363.193 1103.59 354.33 1096.55 347.967C1089.73 341.604 1079.17 338.422 1064.85 338.422C1055.08 338.422 1045.42 340.013 1035.88 343.194C1026.56 346.149 1018.61 350.239 1012.02 355.466L992.929 318.31C1002.93 311.265 1014.97 305.811 1029.06 301.948C1043.15 298.084 1057.47 296.153 1072.01 296.153C1099.96 296.153 1121.66 302.743 1137.11 315.924C1152.57 329.105 1160.29 349.671 1160.29 377.623V482.274H1110.53V459.485C1106.52 466.217 1101.07 471.655 1094.16 475.797C1083.94 481.933 1070.76 485.001 1054.62 485.001C1040.31 485.001 1028.04 482.615 1017.81 477.843C1007.59 472.843 999.746 466.139 994.292 457.731C988.839 449.322 986.112 439.891 986.112 429.437C986.112 418.529 988.725 408.984 993.951 400.803C999.405 392.622 1007.93 386.259 1019.52 381.714C1031.11 376.942 1046.22 374.555 1064.85 374.555H1107.12ZM1044.74 411.712C1049.51 407.621 1058.15 405.576 1070.65 405.576H1107.12V424.324C1103.94 432.505 1098.82 438.755 1091.78 443.073C1084.73 447.163 1076.78 449.209 1067.92 449.209C1058.6 449.209 1051.22 447.277 1045.76 443.414C1040.54 439.323 1037.92 433.869 1037.92 427.051C1037.92 420.915 1040.19 415.802 1044.74 411.712Z"
+              />
+              <path
+                class="draw-me"
+                d="M1680.5 266.001C1670.6 266.001 1662.54 263.127 1656.32 257.38C1650.11 251.633 1647 244.507 1647 236.001C1647 227.495 1650.11 220.369 1656.32 214.622C1662.54 208.875 1670.6 206.001 1680.5 206.001C1690.4 206.001 1698.46 208.76 1704.68 214.277C1710.89 219.564 1714 226.461 1714 234.967C1714 243.932 1710.89 251.403 1704.68 257.38C1698.69 263.127 1690.63 266.001 1680.5 266.001Z"
+              />
+            </mask>
+            <path
+              class="draw-me"
+              d="M2255.18 298.875H2191.78L2114.07 372.57V229.335H2060.89V482.269H2114.07V435.723L2139.76 410.464L2197.58 482.269H2262L2178.81 376.521L2255.18 298.875Z"
+              mask="url(#path-2-outside-1_372_207)"
+            />
+            <path
+              class="draw-me"
+              d="M1845.16 473.07C1860.62 481.024 1878.23 485.001 1898 485.001C1917.31 485.001 1934.13 481.024 1948.44 473.07C1962.76 464.889 1973.33 453.413 1980.14 438.641L1938.9 416.143C1934.13 425.006 1928.11 431.483 1920.83 435.573C1913.79 439.437 1906.06 441.368 1897.66 441.368C1888.57 441.368 1880.39 439.323 1873.11 435.232C1865.84 431.142 1860.05 425.347 1855.73 417.847C1851.64 410.348 1849.59 401.258 1849.59 390.577C1849.59 379.896 1851.64 370.806 1855.73 363.306C1860.05 355.807 1865.84 350.012 1873.11 345.921C1880.39 341.831 1888.57 339.786 1897.66 339.786C1906.06 339.786 1913.79 341.831 1920.83 345.921C1928.11 350.012 1934.13 356.375 1938.9 365.011L1980.14 342.853C1973.33 327.855 1962.76 316.378 1948.44 308.424C1934.13 300.243 1917.31 296.153 1898 296.153C1878.23 296.153 1860.62 300.243 1845.16 308.424C1829.71 316.378 1817.55 327.514 1808.69 341.831C1800.06 355.921 1795.74 372.169 1795.74 390.577C1795.74 408.757 1800.06 425.006 1808.69 439.323C1817.55 453.64 1829.71 464.889 1845.16 473.07Z"
+              mask="url(#path-2-outside-1_372_207)"
+            />
+            <path
+              class="draw-me"
+              d="M1655.73 298.881V482.275H1708.91V298.881H1655.73Z"
+              mask="url(#path-2-outside-1_372_207)"
+            />
+            <path
+              class="draw-me"
+              d="M1458.81 298.88V482.274H1511.98V395.69C1511.98 378.191 1516.42 365.352 1525.28 357.17C1534.37 348.762 1546.18 344.558 1560.73 344.558C1562.77 344.558 1564.7 344.671 1566.52 344.899C1568.34 344.899 1570.39 345.012 1572.66 345.24V296.153C1555.39 296.153 1540.73 299.561 1528.69 306.379C1520.97 310.601 1514.61 316.128 1509.6 322.96V298.88H1458.81Z"
+              mask="url(#path-2-outside-1_372_207)"
+            />
+            <path
+              class="draw-me"
+              d="M1284.08 468.631C1296.12 479.539 1312.94 484.993 1334.53 484.993C1342.71 484.993 1350.55 484.084 1358.04 482.266C1365.77 480.221 1372.36 477.267 1377.81 473.403L1363.5 435.906C1357.59 440.451 1350.43 442.724 1342.02 442.724C1334.98 442.724 1329.41 440.679 1325.32 436.588C1321.23 432.27 1319.19 426.248 1319.19 418.521V343.868H1364.86V302.962H1319.19V258.307H1266.01V302.962H1237.72V343.868H1266.01V419.203C1266.01 441.02 1272.03 457.496 1284.08 468.631Z"
+              mask="url(#path-2-outside-1_372_207)"
+            />
+            <path
+              class="draw-me"
+              d="M706 482.266V243.649H809.281C830.641 243.649 849.048 247.172 864.5 254.217C879.953 261.034 891.883 270.92 900.291 283.873C908.699 296.827 912.902 312.28 912.902 330.233C912.902 347.959 908.699 363.299 900.291 376.252C891.883 389.206 879.953 399.205 864.5 406.25C849.048 413.068 830.641 416.476 809.281 416.476H761.219V482.266H706ZM844.389 360.572C835.982 367.844 823.256 371.48 806.213 371.48H761.219V288.646H806.213C823.256 288.646 835.982 292.282 844.389 299.554C852.797 306.826 857.001 317.053 857.001 330.233C857.001 343.187 852.797 353.3 844.389 360.572Z"
+              mask="url(#path-2-outside-1_372_207)"
+            />
+            <path
+              class="draw-me"
+              d="M1107.12 374.555C1107.12 363.193 1103.59 354.33 1096.55 347.967C1089.73 341.604 1079.17 338.422 1064.85 338.422C1055.08 338.422 1045.42 340.013 1035.88 343.194C1026.56 346.149 1018.61 350.239 1012.02 355.466L992.929 318.31C1002.93 311.265 1014.97 305.811 1029.06 301.948C1043.15 298.084 1057.47 296.153 1072.01 296.153C1099.96 296.153 1121.66 302.743 1137.11 315.924C1152.57 329.105 1160.29 349.671 1160.29 377.623V482.274H1110.53V459.485C1106.52 466.217 1101.07 471.655 1094.16 475.797C1083.94 481.933 1070.76 485.001 1054.62 485.001C1040.31 485.001 1028.04 482.615 1017.81 477.843C1007.59 472.843 999.746 466.139 994.292 457.731C988.839 449.322 986.112 439.891 986.112 429.437C986.112 418.529 988.725 408.984 993.951 400.803C999.405 392.622 1007.93 386.259 1019.52 381.714C1031.11 376.942 1046.22 374.555 1064.85 374.555H1107.12ZM1044.74 411.712C1049.51 407.621 1058.15 405.576 1070.65 405.576H1107.12V424.324C1103.94 432.505 1098.82 438.755 1091.78 443.073C1084.73 447.163 1076.78 449.209 1067.92 449.209C1058.6 449.209 1051.22 447.277 1045.76 443.414C1040.54 439.323 1037.92 433.869 1037.92 427.051C1037.92 420.915 1040.19 415.802 1044.74 411.712Z"
+              mask="url(#path-2-outside-1_372_207)"
+            />
+            <path
+              class="draw-me"
+              d="M1680.5 266.001C1670.6 266.001 1662.54 263.127 1656.32 257.38C1650.11 251.633 1647 244.507 1647 236.001C1647 227.495 1650.11 220.369 1656.32 214.622C1662.54 208.875 1670.6 206.001 1680.5 206.001C1690.4 206.001 1698.46 208.76 1704.68 214.277C1710.89 219.564 1714 226.461 1714 234.967C1714 243.932 1710.89 251.403 1704.68 257.38C1698.69 263.127 1690.63 266.001 1680.5 266.001Z"
+              mask="url(#path-2-outside-1_372_207)"
+            />
+          </svg>
+        </div>
+        <nav>
+          <ul>
+            <li>HOME</li>
+            <li>HOME</li>
+            <li>HOME</li>
+            <li>HOME</li>
           </ul>
         </nav>
       </header>
+
+      <aside class="sidebar">
+        <div id="close" style="color: red">X</div>
+        <div>ABSTRACT ELEMET</div>
+        <div>ABSTRACT ELEMET</div>
+        <div>ABSTRACT ELEMET</div>
+        <div>ABSTRACT ELEMET</div>
+      </aside>
       <!-- ============================================================================================== -->
       <!--                          FORMAÇÃO ACADEMICA                                                    -->
       <!-- ============================================================================================== -->
       <section id="FORMAÇÕES" class="university relative">
         <!-- backgroud -->
         <img src="./assets/images/formatura.png" alt="formatura" class="back" />
-        <h2 class="text-xl mb-2 relative font-bold" style="color: white">
-          Formação acadêmica
-        </h2>
-        <div class="break-words">
-          <ul
-            class="flex flex-row flex-wrap md:grid grid-cols-2 grid-rows-3 gap-9"
-          >
-            <li class="list-card row-span-3 w-[90dvw] md:w-full">
-              <div class="flex gap-2">
-                <img
-                  class="box-content rounded-[6px]"
-                  data-delayed-url="https://media.licdn.com/dms/image/v2/C4D0BAQEr9DAewtvRSQ/company-logo_100_100/company-logo_100_100/0/1633706590981/resilia_educacao_logo?e=2147483647&amp;v=beta&amp;t=or_DJkUQg6Uwt8kjuFObixt2_OwHrPYFB7_NfGwEeK8"
-                  data-ghost-url="https://static.licdn.com/aero-v1/sc/h/6qpnald1ddva78jx4bnnl3vw"
-                  alt="Gráfico Resilia Educação"
-                />
-                <div>
-                  <h3
-                    class="text-[18px] leading-regular group-hover:underline font-semibold"
-                  >
-                    <a
-                      class="text-[18px] link-styled link-no-visited-state hover:! active:!"
-                      data-tracking-control-name="public_profile_school"
-                      data-tracking-will-navigate
-                      href="https://br.linkedin.com/school/resilia-educacao/?trk=public_profile_school"
+        <article>
+          <h2 class="text-xl mb-2 relative font-bold" style="color: white">
+            Formação acadêmica
+          </h2>
+          <div class="break-words">
+            <ul
+              class="flex flex-row flex-wrap md:grid grid-cols-2 grid-rows-3 gap-9"
+            >
+              <li class="list-card row-span-3 w-[90dvw] md:w-full">
+                <div class="flex gap-2">
+                  <img
+                    class="box-content rounded-[6px]"
+                    data-delayed-url="https://media.licdn.com/dms/image/v2/C4D0BAQEr9DAewtvRSQ/company-logo_100_100/company-logo_100_100/0/1633706590981/resilia_educacao_logo?e=2147483647&amp;v=beta&amp;t=or_DJkUQg6Uwt8kjuFObixt2_OwHrPYFB7_NfGwEeK8"
+                    data-ghost-url="https://static.licdn.com/aero-v1/sc/h/6qpnald1ddva78jx4bnnl3vw"
+                    alt="Gráfico Resilia Educação"
+                  />
+                  <div>
+                    <h3
+                      class="text-[18px] leading-regular group-hover:underline font-semibold"
                     >
-                      <span class="title"> Resilia Educação </span>
-                    </a>
-                  </h3>
-                  <h4 class="text-md">
-                    <span data-section="educations">
-                      Desenvolvimento web fullstack
+                      <a
+                        class="text-[18px] link-styled link-no-visited-state hover:! active:!"
+                        data-tracking-control-name="public_profile_school"
+                        data-tracking-will-navigate
+                        href="https://br.linkedin.com/school/resilia-educacao/?trk=public_profile_school"
+                      >
+                        <span class="title"> Resilia Educação </span>
+                      </a>
+                    </h3>
+                    <h4 class="text-md">
+                      <span data-section="educations">
+                        Desenvolvimento web fullstack
+                      </span>
+                    </h4>
+                    <span class="faded text-small text-justify">
+                      2021 - 2021
                     </span>
-                  </h4>
-                  <span class="faded text-small text-justify">
-                    2021 - 2021
-                  </span>
+                  </div>
                 </div>
-              </div>
-              <p class="text-justify p-1">
-                Uma jornada incrivel de 6 meses de imersão ao desenvolvimento
-                fullstack.
-                <br />
-                Linguagens aprendidas: HTML, CSS, JAVASCRIPT, NODEJS, MYSQL,
-                REACTJS.
-                <br />
-                Aprendi a fazer desde uma pagina estatica e apenas de
-                visualização a uma pagina mais dinamica e interativa.
-                <br />
-                Aprendi a usar pacotes do nodejs, a criar uma API restfull com
-                conexão ao banco de dados usando as regras do CRUD.
-                <br />
-                Usei o REACTJS para mostrar ao usuario os dados partindo da API
-                criada.
-                <br /><br />
-                Aprendi também desenvolver habilidades de soft skills. Conheci
-                sobre, como ter uma rotina de sucesso, os 4 pilares da
-                inteligência emocional, metodologias ageis scrum e kamban,
-                reuniões ageis. Além de dar atividades para solucionar os
-                problemas de um trabalho em grupo, fomos estimulados a
-                desenvolver essas habilidades com colegas de classe e enquanto
-                desenvolviamos atividades em grupos.
-                <br /><br />
-                Algo que quero ressaltar é que, soft skills foi muito importante
-                pra mim e pratico até hoje.
-              </p>
-            </li>
-            <li class="list-card row-span-1 w-[90dvw] md:w-full">
-              <div class="flex gap-2">
-                <img
-                  class="box-content rounded-[6px]"
-                  data-delayed-url="https://static.licdn.com/aero-v1/sc/h/6qpnald1ddva78jx4bnnl3vw"
-                  data-ghost-classes="bg-color-entity-ghost-background"
-                  data-ghost-url="https://static.licdn.com/aero-v1/sc/h/6qpnald1ddva78jx4bnnl3vw"
-                  alt
-                />
-                <div class="pl-0.5 grow break-words">
-                  <h3
-                    class="text-[18px] leading-regular group-hover:underline font-semibold"
-                  >
-                    <span class="title">
-                      Escola Estadual Professor Antônio Lisboa
-                    </span>
-                  </h3>
-                  <h4 class="text-md">
-                    <span>Ensino Médio</span>
-                  </h4>
-                  <span class="faded text-small"> 2016 - 2017 </span>
-                </div>
-              </div>
-            </li>
-            <li class="list-card col-start-2 row-start-3 w-[90dvw] md:w-full">
-              <div class="flex gap-2">
-                <img
-                  class="box-content rounded-[6px]"
-                  data-delayed-url="https://media.licdn.com/dms/image/v2/D4D0BAQHdM_cwX2oKiA/company-logo_100_100/company-logo_100_100/0/1721676084455?e=2147483647&amp;v=beta&amp;t=Q5Igs-iMIev_bigFf7MO-bug1JU02ZWkVs20SN5qekQ"
-                  data-ghost-classes="bg-color-entity-ghost-background"
-                  data-ghost-url="https://static.licdn.com/aero-v1/sc/h/6qpnald1ddva78jx4bnnl3vw"
-                  alt="Gráfico Centro Universitário FMU | FIAM-FAAM"
-                />
-                <div>
-                  <h3
-                    class="text-[18px] leading-regular group-hover:underline font-semibold"
-                  >
-                    <a
-                      class="text-[18px] link-styled link-no-visited-state hover:! active:!"
-                      data-tracking-control-name="public_profile_school"
-                      data-tracking-will-navigate
-                      href="https://br.linkedin.com/school/centro-universitario-fmu/?trk=public_profile_school"
+                <p class="text-justify p-1">
+                  Uma jornada incrivel de 6 meses de imersão ao desenvolvimento
+                  fullstack.
+                  <br />
+                  Linguagens aprendidas: HTML, CSS, JAVASCRIPT, NODEJS, MYSQL,
+                  REACTJS.
+                  <br />
+                  Aprendi a fazer desde uma pagina estatica e apenas de
+                  visualização a uma pagina mais dinamica e interativa.
+                  <br />
+                  Aprendi a usar pacotes do nodejs, a criar uma API restfull com
+                  conexão ao banco de dados usando as regras do CRUD.
+                  <br />
+                  Usei o REACTJS para mostrar ao usuario os dados partindo da
+                  API criada.
+                  <br /><br />
+                  Aprendi também desenvolver habilidades de soft skills. Conheci
+                  sobre, como ter uma rotina de sucesso, os 4 pilares da
+                  inteligência emocional, metodologias ageis scrum e kamban,
+                  reuniões ageis. Além de dar atividades para solucionar os
+                  problemas de um trabalho em grupo, fomos estimulados a
+                  desenvolver essas habilidades com colegas de classe e enquanto
+                  desenvolviamos atividades em grupos.
+                  <br /><br />
+                  Algo que quero ressaltar é que, soft skills foi muito
+                  importante pra mim e pratico até hoje.
+                </p>
+              </li>
+              <li class="list-card row-span-1 w-[90dvw] md:w-full">
+                <div class="flex gap-2">
+                  <img
+                    class="box-content rounded-[6px]"
+                    data-delayed-url="https://static.licdn.com/aero-v1/sc/h/6qpnald1ddva78jx4bnnl3vw"
+                    data-ghost-classes="bg-color-entity-ghost-background"
+                    data-ghost-url="https://static.licdn.com/aero-v1/sc/h/6qpnald1ddva78jx4bnnl3vw"
+                    alt
+                  />
+                  <div class="pl-0.5 grow break-words">
+                    <h3
+                      class="text-[18px] leading-regular group-hover:underline font-semibold"
                     >
                       <span class="title">
-                        Centro Universitário FMU | FIAM-FAAM
+                        Escola Estadual Professor Antônio Lisboa
                       </span>
-                    </a>
-                  </h3>
-
-                  <h4 class="text-md">
-                    <span class="">Ciência da Computação</span>
-                  </h4>
-                  <span
-                    class="faded date-range font-sans text-md leading-open font-regular"
-                  >
-                    2024 - o momento
-                  </span>
+                    </h3>
+                    <h4 class="text-md">
+                      <span>Ensino Médio</span>
+                    </h4>
+                    <span class="faded text-small"> 2016 - 2017 </span>
+                  </div>
                 </div>
-              </div>
+              </li>
+              <li class="list-card col-start-2 row-start-3 w-[90dvw] md:w-full">
+                <div class="flex gap-2">
+                  <img
+                    class="box-content rounded-[6px]"
+                    data-delayed-url="https://media.licdn.com/dms/image/v2/D4D0BAQHdM_cwX2oKiA/company-logo_100_100/company-logo_100_100/0/1721676084455?e=2147483647&amp;v=beta&amp;t=Q5Igs-iMIev_bigFf7MO-bug1JU02ZWkVs20SN5qekQ"
+                    data-ghost-classes="bg-color-entity-ghost-background"
+                    data-ghost-url="https://static.licdn.com/aero-v1/sc/h/6qpnald1ddva78jx4bnnl3vw"
+                    alt="Gráfico Centro Universitário FMU | FIAM-FAAM"
+                  />
+                  <div>
+                    <h3
+                      class="text-[18px] leading-regular group-hover:underline font-semibold"
+                    >
+                      <a
+                        class="text-[18px] link-styled link-no-visited-state hover:! active:!"
+                        data-tracking-control-name="public_profile_school"
+                        data-tracking-will-navigate
+                        href="https://br.linkedin.com/school/centro-universitario-fmu/?trk=public_profile_school"
+                      >
+                        <span class="title">
+                          Centro Universitário FMU | FIAM-FAAM
+                        </span>
+                      </a>
+                    </h3>
 
-              <p class="text-justify p-1">
-                Programando sistemas e teoria da computação. Ganhando
-                experiência prática através de tarefas, testes e projetos que
-                trazem conhecimento e resoluções de problemas.
-              </p>
-            </li>
-          </ul>
-        </div>
+                    <h4 class="text-md">
+                      <span class="">Ciência da Computação</span>
+                    </h4>
+                    <span
+                      class="faded date-range font-sans text-md leading-open font-regular"
+                    >
+                      2024 - o momento
+                    </span>
+                  </div>
+                </div>
+
+                <p class="text-justify p-1">
+                  Programando sistemas e teoria da computação. Ganhando
+                  experiência prática através de tarefas, testes e projetos que
+                  trazem conhecimento e resoluções de problemas.
+                </p>
+              </li>
+            </ul>
+          </div>
+        </article>
       </section>
 
       <!-- ============================================================================================== -->
@@ -286,7 +411,7 @@
         <!-- background -->
         <img src="./assets/images/programming_image.png" alt="" class="back" />
         <h2 class="text-xl mb-2 relative">Licenças e certificados</h2>
-        <div class="z-10">
+        <div>
           <ul class="flex flex-wrap gap-9 md:grid grid-cols-2 grid-rows-3">
             <li class="list-card relative java w-[90dvw] md:w-full">
               <svg
@@ -843,7 +968,7 @@
       <!-- ============================================================================================== -->
       <!--                          RECOMENDAÇÕES RECEBIDAS                                               -->
       <!-- ============================================================================================== -->
-      <section id="RECOMEDAÇÕES relative" class="p-2">
+      <section id="RECOMEDAÇÕES" class="p-2 relative back-dark">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="32"
@@ -954,7 +1079,7 @@
           </ul>
         </div>
       </section>
-    </div>
+    </main>
     <script
       src="https://static.licdn.com/aero-v1/sc/h/63v8bmda993woks6mpwwd8ly3"
       async
